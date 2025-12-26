@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Conversion Tools for College Students | 2025 Guide</title>
+    <meta name="description" content="Explore simple and accurate academic conversion tools for college students. Learn why CGPA to percentage conversion is essential and access recommended resources.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0c0e12;
+            --surface-color: #161a21;
+            --accent-primary: #3b82f6;
+            --accent-secondary: #60a5fa;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --glass-bg: rgba(22, 26, 33, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Progress Bar */
+        #progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+            z-index: 1000;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: 100px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition);
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #1e293b 0%, #0c0e12 100%);
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+            40% {transform: translateY(-10px) translateX(-50%);}
+            60% {transform: translateY(-5px) translateX(-50%);}
+        }
+
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 2.5rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .card h3 {
+            color: var(--accent-secondary);
+            margin-bottom: 1rem;
+        }
+
+        /* Content Sections */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .list-item {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .list-item::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+            font-weight: bold;
+        }
+
+        /* Backlink */
+        .resource-box {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.05));
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .resource-link {
+            color: var(--accent-secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border-bottom: 1px solid transparent;
+        }
+
+        .resource-link:hover {
+            color: white;
+            border-bottom-color: white;
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0;
+            border-top: 1px solid var(--glass-border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="progress"></div>
+
+    <section class="hero visible">
+        <div class="container hero-content">
+            <h1>Academic Conversions<br>Made Simple</h1>
+            <p>Your one-stop guide to mastering grade conversions and understanding academic metrics with precision.</p>
+            <div class="scroll-indicator">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+            </div>
+        </div>
+    </section>
+
+    <section id="why" class="container">
+        <div class="section-header">
+            <h2>Why Students Need Conversions</h2>
+            <p>CGPA and percentage conversions are more than just numbers; they are the bridge between your academic performance and global opportunities.</p>
+        </div>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Global Standardization</h3>
+                <p>Universities and employers worldwide use different grading scales. Converting your scores helps them understand your performance accurately.</p>
+            </div>
+            <div class="card">
+                <h3>Eligibility Criteria</h3>
+                <p>Most competitive exams and job applications require a minimum percentage, making precise conversion critical for eligibility.</p>
+            </div>
+            <div class="card">
+                <h3>Scholarship Applications</h3>
+                <p>External funding bodies often require normalized scores to compare applicants from various educational backgrounds fairly.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="situations" class="container" style="background: rgba(255,255,255,0.02); border-radius: 40px;">
+        <div class="section-header">
+            <h2>Critical Conversion Scenarios</h2>
+            <p>Knowing when to convert is as important as knowing how to convert.</p>
+        </div>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div class="list-item">
+                <strong>Placement Drives:</strong> Many multinational companies screen candidates based on a minimum percentage (often 60% or 70%).
+            </div>
+            <div class="list-item">
+                <strong>Higher Education:</strong> Applying for Masters or PhD programs abroad often requires a WES evaluation or a direct percentage conversion.
+            </div>
+            <div class="list-item">
+                <strong>Government Job Portals:</strong> Forms usually have a fixed field for percentage, even if your university provides a CGPA.
+            </div>
+            <div class="list-item">
+                <strong>Internship Applications:</strong> Early-career opportunities often use percentage-based cutoffs to filter large volumes of applicants.
+            </div>
+        </div>
+    </section>
+
+    <section id="resources" class="container">
+        <div class="section-header">
+            <h2>Recommended Resources</h2>
+            <p>Leverage these reliable tools to ensure your conversions are accurate and compliant with university standards.</p>
+        </div>
+        <div class="resource-box">
+            <p>For students looking for quick and reliable accuracy, a dedicated tool like the <a href="https://cgpahub.com/tools/cgpa-to-percentage" class="resource-link" target="_blank" rel="noopener">CGPA to percentage calculator</a> on CGPA Hub can be an informative resource for academic planning.</p>
+        </div>
+    </section>
+
+    <section id="tips" class="container">
+        <div class="section-header">
+            <h2>Pro Tips for Accuracy</h2>
+            <p>Avoid common pitfalls that could lead to your application being rejected due to incorrect data.</p>
+        </div>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Check the Formula</h3>
+                <p>Verify if your university uses a specific multiplier (e.g., 9.5 or 10.0) before submitting your application.</p>
+            </div>
+            <div class="card">
+                <h3>Use Official Tools</h3>
+                <p>Whenever possible, use tools recommended by academic portals to ensure the logic matches industry standards.</p>
+            </div>
+            <div class="card">
+                <h3>Double-Check Entry</h3>
+                <p>A simple decimal error can significantly change your result. Always verify your inputs twice.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Academic Resource Hub. All rights reserved.</p>
+            <p style="margin-top: 10px; opacity: 0.7;">Disclaimer: The information provided on this website is for educational and informational purposes only. While we strive for accuracy, users should always verify conversion results with their official university guidelines before final submission.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Progress Bar Logic
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progress').style.width = scrolled + "%";
+        });
+
+        // Intersection Observer for Reveal Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Smooth reveal for cards
+        document.querySelectorAll('.card').forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.1}s`;
+        });
+    </script>
+</body>
+</html>
